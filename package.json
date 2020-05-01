@@ -4,7 +4,7 @@
   "description": "Tests to assert covid in news title",
   "main": "index.js",
   "scripts": {
-    "test": "rm -rf newman;node_modules/.bin/newman run test/News.postman_collection.json -r htmlextra --env-var baseUrl=https://newsapi.org"
+    "test": "rm -rf shippable;node_modules/.bin/newman run test/News.postman_collection.json -r junit --reporter-junit-export 'shippable/testresults/result.xml' -n 2 --env-var baseUrl=https://newsapi.org"
   },
   "keywords": [
     "COVID"
@@ -13,6 +13,6 @@
   "license": "ISC",
   "devDependencies": {
     "newman": "^5.0.0",
-    "newman-reporter-htmlextra": "1.14.1"
+    "newman-reporter-junitfull": "1.1.1"
   }
 }
