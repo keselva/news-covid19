@@ -21,7 +21,7 @@
 							"    var jsonData = pm.response.json();",
 							"    var articlesJson= jsonData.articles;",
 							"        for(var i=0;i< articlesJson.length;i++){",
-							"            pm.expect(articlesJson[i].title).to.include('COVID');",
+							"            pm.expect((articlesJson[i].title).toLowerCase()).to.contain('covid'.toLowerCase());",
 							"        }",
 							"});"
 						],
@@ -33,9 +33,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/v2/everything?q=COVID&from=2020-04-01&sortBy=publishedAt&apiKey=bfe7f531ec34490dabc2d653be1b800a&pageSize=50&page=2",
+					"raw": "https://newsapi.org/v2/everything?q=COVID&apiKey=bfe7f531ec34490dabc2d653be1b800a&pageSize=50&page=2&from=2020-04-02",
+					"protocol": "https",
 					"host": [
-						"{{baseUrl}}"
+						"newsapi",
+						"org"
 					],
 					"path": [
 						"v2",
@@ -47,12 +49,9 @@
 							"value": "COVID"
 						},
 						{
-							"key": "from",
-							"value": "2020-04-01"
-						},
-						{
 							"key": "sortBy",
-							"value": "publishedAt"
+							"value": "publishedAt",
+							"disabled": true
 						},
 						{
 							"key": "apiKey",
@@ -65,6 +64,10 @@
 						{
 							"key": "page",
 							"value": "2"
+						},
+						{
+							"key": "from",
+							"value": "2020-04-02"
 						}
 					]
 				}
