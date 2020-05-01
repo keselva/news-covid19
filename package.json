@@ -4,7 +4,7 @@
   "description": "Tests to assert covid in news title",
   "main": "index.js",
   "scripts": {
-    "test": "rm -rf shippable;node_modules/.bin/newman run test/News.postman_collection.json -r junit --reporter-junit-export 'shippable/testresults/result.xml' -n 2 --env-var baseUrl=https://newsapi.org"
+    "test": "rm -rf shippable;node_modules/.bin/newman run test/News.postman_collection.json -r junit --reporter-junit-export 'shippable/testresults/result.xml' -n 2 --env-var baseUrl=https://newsapi.org --env-var token=$npm_config_token"
   },
   "keywords": [
     "COVID"

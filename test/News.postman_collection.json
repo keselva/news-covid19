@@ -33,7 +33,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://newsapi.org/v2/everything?q=COVID&apiKey=bfe7f531ec34490dabc2d653be1b800a&pageSize=50&page=2&from=2020-04-02",
+					"raw": "https://newsapi.org/v2/everything?q=COVID&apiKey={{token}}&pageSize=50&page=2&from=2020-04-02",
 					"protocol": "https",
 					"host": [
 						"newsapi",
@@ -55,7 +55,7 @@
 						},
 						{
 							"key": "apiKey",
-							"value": "bfe7f531ec34490dabc2d653be1b800a"
+							"value": "{{token}}"
 						},
 						{
 							"key": "pageSize",
